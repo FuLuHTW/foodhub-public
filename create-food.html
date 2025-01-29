@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Food - FoodHub</title>
+    <link rel="stylesheet" href="create-food.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-container">
+                <div class="logo">FoodHub</div>
+                <div class="search-bar">
+                    <!--<from action="/search" method="get"> -->
+                    <input type="text" placeholder="Search foods...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                <!--</from> -->
+                </div>
+                <div class="buttons">
+                    <button class="transparent-button"><i class="fas fa-plus"></i> Add Food</button>
+                    <button class="transparent-button"><i class="fas fa-user"></i> Login</button>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <h2>Create New Food Item</h2>
+            <form id="food-form">
+                <div class="form-group">
+                    <label for="food-name">Food Name:</label>
+                    <input type="text" id="food-name" name="food-name" placeholder="Enter food name" required>
+                </div>
+                <div class="form-group">
+                    <label for="food-price">Price (€/kg):</label>
+                    <input type="number" id="food-price" name="food-price" step="0.01" placeholder="Enter price" required>
+                </div>
+                <div class="form-group">
+                    <label for="food-calories">Calories (kcal/100g):</label>
+                    <input type="number" id="food-calories" name="food-calories" placeholder="Enter calories" required>
+                </div>
+                <div class="form-group">
+                    <label for="food-image">Image URL:</label>
+                    <input type="text" id="food-image" name="food-image" placeholder="Enter image URL" required>
+                </div>
+                <button type="submit" class="save-button">save food item</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>© 2024 FoodHub. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

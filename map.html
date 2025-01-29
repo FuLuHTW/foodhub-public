@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <link rel="stylesheet" href="map.css"> <!-- Spezifische CSS für die Login-Seite -->
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenStreetMap - Treskowallee</title>
+    <!-- Leaflet.js 样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+            /* 设置地图高度 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My OpenStreetMap - Foodhub</h1>
+    <!-- 地图容器 -->
+    <div id="map"></div>
+
+    <!-- Leaflet.js 脚本 -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // 初始化地图，设置中心点为 Treskowallee 8, 10318 Berlin
+        var map = L.map('map').setView([52.493256, 13.525419], 16); // 坐标：[纬度, 经度]，缩放级别：16
+
+        // 添加 OpenStreetMap 的图块图层
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // 在 Treskowallee 8 添加标记
+        L.marker([52.493256, 13.525419]).addTo(map)
+            .bindPopup('Treskowallee 8, 10318 Berlin')
+            .openPopup();
+    </script>
+</body>
+
+</html>

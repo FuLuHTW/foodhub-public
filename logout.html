@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodHub</title>
+    <link rel="stylesheet" href="logout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-container">
+                <div class="logo">FoodHub</div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search foods...">
+                    <button type="submit">🔍</button>
+                </div>
+                <div class="buttons">
+                    <button><i class="fas fa-plus"></i> Add Food</button>
+                    <button><i class="fas fa-list"></i> Show Categories</button>
+                    <button onclick="location.href='index.html'">
+                        <i class="fas fa-user"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <main class="food-grid">
+                <!-- 示例的12个食物卡片 -->
+                <div class="food-item">
+                    <img src="images/apple.jpg" alt="Apple" class="food-image">
+                    <div class="info">
+                        <h3>Apple</h3>
+                        <p>Price: 2.99€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-apple.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="images/banana.jpg" alt="Banana" class="food-image">
+                    <div class=" info">
+                        <h3>Banana</h3>
+                        <p>Price: 1.50€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-banana.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="images/carrot.jpg" alt="Carrot" class="food-image">
+                    <div class="info">
+                        <h3>Carrot</h3>
+                        <p>Price: 1.99€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Carrot.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="images/tomato.jpg" alt="Tomato" class="food-image">
+                    <div class="info">
+                        <h3>Tomato</h3>
+                        <p>Price: 2.50€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-tomato.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="images/broccoli.jpg" alt="Broccoli" class="food-image">
+                    <div class="info">
+                        <h3>Broccoli</h3>
+                        <p>Price: 3.20€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Broccoli.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="images/chicken.jpg" alt="Chicken" class="food-image">
+                    <div class="info">
+                        <h3>Chicken</h3>
+                        <p>Price: 9.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">meat</span>
+                            <span class="tag">cooked</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Chicken.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="images/beef.jpg" alt="Beef" class="food-image">
+                    <div class="info">
+                        <h3>Beef</h3>
+                        <p>Price: 15.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">meat</span>
+                            <span class="tag">cooked</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Beef.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="images/watermelon.jpg" alt="Watermelon" class="food-image">
+                    <div class="info">
+                        <h3>Watermelon</h3>
+                        <p>Price: 1.80€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Watermelon.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/cherry.jpg" alt="Cherry" class="food-image">
+                    <div class="info">
+                        <h3>Cherry</h3>
+                        <p>Price: 6.50€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Cherry.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/litchi.jpg" alt="Litchi" class="food-image">
+                    <div class="info">
+                        <h3>Litchi</h3>
+                        <p>Price: 4.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Litchi.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/sausage.jpg" alt="Sausage" class="food-image">
+                    <div class="info">
+                        <h3>Sausage</h3>
+                        <p>Price: 10.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">meat</span>
+                            <span class="tag">cooked</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Sausage.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/grapes.jpg" alt="Grapes" class="food-image">
+                    <div class="info">
+                        <h3>Grapes</h3>
+                        <p>Price: 3.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Grapes.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/coconut.jpg" alt="Coconut" class="food-image">
+                    <div class="info">
+                        <h3>Coconut</h3>
+                        <p>Price: 3.50€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Coconut.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/dates.jpg" alt="Dates" class="food-image">
+                    <div class="info">
+                        <h3>Dates</h3>
+                        <p>Price: 10.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Dates.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/garlic.jpg" alt="Garlic" class="food-image">
+                    <div class="info">
+                        <h3>Garlic</h3>
+                        <p>Price: 3.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-garlic.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/onion.jpg" alt="Onion" class="food-image">
+                    <div class="info">
+                        <h3>Onion</h3>
+                        <p>Price: 1.50€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Onion.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/lemon.jpg" alt="Lemon" class="food-image">
+                    <div class="info">
+                        <h3>Lemon</h3>
+                        <p>Price: 2.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-lemon.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/cucumber.jpg" alt="Cucumber" class="food-image">
+                    <div class="info">
+                        <h3>Cucumber</h3>
+                        <p>Price: 1.80€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Cucumber.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/green_apple.jpg" alt="Cucumber" class="food-image">
+                    <div class="info">
+                        <h3>Green Apple</h3>
+                        <p>Price: 3.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-green_apple.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/hazelnut.jpg" alt="Hazelnut" class="food-image">
+                    <div class="info">
+                        <h3>Hazelnut</h3>
+                        <p>Price: 12.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Hazelnut.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="images/raisins.jpg" alt="Raisins" class="food-image">
+                    <div class="info">
+                        <h3>Raisins</h3>
+                        <p>Price: 6.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">cooked</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Raisins.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/kiwi.jpg" alt="Kiwi" class="food-image">
+                    <div class="info">
+                        <h3>Kiwi</h3>
+                        <p>Price: 4.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Kiwi.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/tofu.jpg" alt="Tofu" class="food-image">
+                    <div class="info">
+                        <h3>Tofu</h3>
+                        <p>Price: 4.50€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">cooked</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Tofu.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/strawberry.jpg" alt="Strawberry " class="food-image">
+                    <div class="info">
+                        <h3>Strawberry</h3>
+                        <p>Price: 6.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-strawberry.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/spinach.jpg" alt="Spinach" class="food-image">
+                    <div class="info">
+                        <h3>Spinach</h3>
+                        <p>Price: 4.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Spinach.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/lettuce.jpg" alt="Lettuce" class="food-image">
+                    <div class="info">
+                        <h3>Lettuce</h3>
+                        <p>Price: 2.20€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Lettuce.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/pumpkin.jpg" alt="pumpkin" class="food-image">
+                    <div class="info">
+                        <h3>Pumpkin</h3>
+                        <p>Price: 5.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-pumpkin.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/kaki.jpg" alt="Kaki" class="food-image">
+                    <div class="info">
+                        <h3>Kaki</h3>
+                        <p>Price: 3.50€/kg</p>
+                        <div class="tags">
+                            <span class="tag">fruit</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-Kaki.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/potato.jpg" alt="potato" class="food-image">
+                    <div class="info">
+                        <h3>Potato</h3>
+                        <p>Price: 1.00€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-potato.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="images/orange.jpg" alt="orange" class="food-image">
+                    <div class="info">
+                        <h3>Orange</h3>
+                        <p>Price: 2.50€/kg</p>
+                        <div class="tags">
+                            <span class="tag">vegetable</span>
+                            <span class="tag">fresh</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-action" onclick="location.href='edit-food/edit-orange.html'">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn-action" onclick="deleteItem(this)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn-action"><i class="fas fa-shopping-cart"></i> Book</button>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <a href="impressum.html" style="text-decoration: none; color: inherit;">
+                    <p>Impressum</p>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript for deleting food items -->
+    <script>
+        function deleteItem(button) {
+            const foodItem = button.closest('.food-item');
+            if (foodItem) {
+                foodItem.remove();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // 获取所有带有 "food-image" 类的图片
+            const foodImages = document.querySelectorAll(".food-image");
+
+            // 为每个图片添加点击事件监听器
+            foodImages.forEach((image) => {
+                image.addEventListener("click", function () {
+                    // 根据图片的 alt 属性来决定跳转链接
+                    const foodName = image.alt.toLowerCase(); // 获取 alt 并转换为小写
+                    const url = `file:///C:/Users/75419/wt-ws24-web3-projekt/food-details/${foodName}-details.html`;
+
+                    // 跳转到对应的详情页面
+                    window.location.href = url;
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // 获取所有的 "Book" 按钮
+            const bookButtons = document.querySelectorAll(".btn-action i.fa-shopping-cart");
+
+            // 为每个 "Book" 按钮的父元素（button）添加点击事件
+            bookButtons.forEach(icon => {
+                const button = icon.closest("button");
+                button.addEventListener("click", function () {
+                    // 获取食物名称
+                    const foodItem = button.closest(".food-item");
+                    const foodName = foodItem.querySelector("h3").textContent.trim();
+
+                    // 构造跳转链接并将食物名称作为 URL 参数
+                    const url = `book-food.html?food=${encodeURIComponent(foodName)}`;
+
+                    // 跳转到指定的页面
+                    window.location.href = url;
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

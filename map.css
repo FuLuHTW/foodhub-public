@@ -1,0 +1,9 @@
+body {
+
+    background-color: #f8f8f8;
+    /* 设置背景色，防止网格太亮 */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 10px 10px;
+    /* 控制格子的大小 */
+}

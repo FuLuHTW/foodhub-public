@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* Anpassung an das Layout der Startseite (index.html) */
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Anpassbar an Bildschirmgröße */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* Suchergebnis-Karten */
+.food-item {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.food-item:hover {
+    transform: scale(1.05);
+}
+
+
+/* Bildgröße anpassen */
+.food-item img {
+    width: 150px; /* Einheitliche Bildgröße */
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Stil für den Titel */
+.food-item h2 {
+    font-size: 20px;
+    color: #1a73e8;
+    margin-bottom: 5px;
+}
+
+/* Preis- und Kategorie-Styling */
+.food-item p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Footer-Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e0e0e0;
+    color: #333;
+    margin-top: 20px;
+}

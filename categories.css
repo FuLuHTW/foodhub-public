@@ -1,0 +1,194 @@
+body {
+    font-family     : Arial, sans-serif;
+    background      : #f8f8f8;
+    margin          : 0;
+    padding         : 0;
+    display         : flex;
+    justify-content : center;
+    background-color: #f8f8f8;
+    /* 设置背景色，防止网格太亮 */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 10px 10px;
+    /* 控制格子的大小 */
+}
+
+.container {
+    max-width       : 800px;
+    width           : 100%;
+    min-height      : 100vh;
+    padding         : 20px;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : space-between;
+    background-color: #ffffff;
+    box-shadow      : 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    background-color: #e0e0e0;
+    width           : 100%;
+    padding         : 20px 30px;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    box-shadow      : 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    width          : 100%;
+}
+
+.logo {
+    font-size  : 2.5em;
+    font-weight: bold;
+    color      : #007bff;
+}
+
+.search-bar {
+    display    : flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding      : 10px;
+    width        : 250px;
+    border-radius: 5px;
+    border       : 1px solid #999;
+}
+
+.search-bar button {
+    background : none;
+    border     : none;
+    cursor     : pointer;
+    margin-left: 5px;
+}
+
+.buttons {
+    display    : flex;
+    align-items: center;
+    gap        : 15px;
+}
+
+.buttons button {
+    padding         : 10px 25px;
+    border          : 1px solid #007bff;
+    border-radius   : 5px;
+    background-color: transparent;
+    color           : #007bff;
+    cursor          : pointer;
+    font-weight     : bold;
+}
+
+.buttons button:hover {
+    background-color: #f1f1f1;
+}
+
+.content {
+    padding   : 20px;
+    flex-grow : 1;
+    text-align: center;
+}
+
+h2 {
+    font-size    : 2.5em;
+    text-align   : center;
+    margin-bottom: 20px;
+    font-weight  : bold;
+}
+
+.categories-table {
+    width          : 100%;
+    border-collapse: separate;
+    margin-bottom  : 20px;
+    border-radius  : 15px;
+    overflow       : hidden;
+    box-shadow     : 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-spacing : 0;
+}
+
+.categories-table th,
+.categories-table td {
+    border    : 1px solid #999;
+    padding   : 10px;
+    text-align: center;
+}
+
+.categories-table th {
+    background-color: #f0f0f0;
+}
+
+.categories-table tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+}
+
+.categories-table tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+}
+
+.categories-table tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+.categories-table tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+.btn-action {
+    padding         : 8px 15px;
+    border-radius   : 5px;
+    border          : 1px solid #007bff;
+    background-color: #e6f7ff;
+    color           : #007bff;
+    cursor          : pointer;
+    font-weight     : bold;
+}
+
+.btn-action.edit {
+    border-color    : #dc3545;
+    background-color: #f8d7da;
+    color           : #dc3545;
+}
+
+.btn-action.delete {
+    border-color    : #20c997;
+    background-color: #e6f7ff;
+    color           : #20c997;
+}
+
+.btn-action:hover {
+    background-color: #d4f4f4;
+}
+
+.btn-action.edit:hover {
+    background-color: #f1b0b7;
+}
+
+.btn-action.delete:hover {
+    background-color: #d4f4f4;
+}
+
+.add-category-button {
+    padding         : 10px 25px;
+    border          : 1px solid #007bff;
+    border-radius   : 5px;
+    background-color: #e6f7ff;
+    color           : #007bff;
+    cursor          : pointer;
+    font-weight     : bold;
+}
+
+.add-category-button:hover {
+    background-color: #d4f4f4;
+}
+
+footer {
+    width           : 100%;
+    text-align      : center;
+    padding         : 20px;
+    background-color: #e0e0e0;
+    margin-top      : 40px;
+}
