@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Tofu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="edit-food.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <a href="../index.html" class="logo-link">FoodHub</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search foods...">
+                    <button type="submit">🔍</button>
+                </div>
+                <div class="buttons">
+                    <button><i class="fas fa-plus"></i> Add Food</button>
+                    <button><i class="fas fa-user"></i> Login</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <h2>Edit Tofu</h2>
+
+            <form class="edit-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" value="Tofu">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" value="4.50">
+                </div>
+
+                <div class="form-group">
+                    <label for="picture">Picture:</label>
+                    <input type="text" id="picture" value="images/tofu.jpg">
+                </div>
+
+                <div class="attributes">
+                    <div class="attribute">
+                        <input type="checkbox" id="plant-based" checked>
+                        <label for="plant-based">plant-based</label>
+                    </div>
+                    <div class="attribute">
+                        <input type="checkbox" id="protein" checked>
+                        <label for="protein">protein</label>
+                    </div>
+                    <div class="attribute">
+                        <input type="checkbox" id="vegan" checked>
+                        <label for="vegan">vegan</label>
+                    </div>
+                </div>
+
+                <button type="button" class="save-button" id="saveButton">Save</button>
+            </form>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <a href="../impressum.html" style="text-decoration: none; color: inherit;">
+                    <p>Impressum</p>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("saveButton").addEventListener("click", function () {
+            // 获取用户输入的值
+            const name = document.getElementById("name").value.trim();
+            let price = document.getElementById("price").value.trim(); // 使用let便于修改
+            const picture = document.getElementById("picture").value.trim();
+            const picturePath = picture.startsWith("images/") ? picture : "images/" + picture;
+
+            // 强制添加单位 €/kg
+            if (!price.endsWith("€/kg")) {
+                price += "€/kg";
+            }
+
+            // 获取复选框的值
+            const selectedAttributes = [];
+            const attributeCheckboxes = document.querySelectorAll(".attributes input[type='checkbox']");
+            attributeCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedAttributes.push(checkbox.id);
+                }
+            });
+
+            // 保存编辑后的数据到 sessionStorage
+            const foodId = "tofu"; // 当前编辑的食物 ID
+            sessionStorage.setItem(`${foodId}_name`, name || "Tofu");
+            sessionStorage.setItem(`${foodId}_price`, price || "4.50€/kg");
+            sessionStorage.setItem(`${foodId}_picture`, picturePath || "images/tofu.jpg");
+            sessionStorage.setItem(`${foodId}_attributes`, JSON.stringify(selectedAttributes.length ? selectedAttributes : ["vegetable", "cooked"]));
+
+            // 跳转回主页面
+            window.location.href = "../index.html";
+        });
+    </script>
+
+</body>
+
+</html>

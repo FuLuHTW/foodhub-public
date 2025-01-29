@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Apple</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="edit-food.css">
+</head>
+
+<body>
+    <!-- 主容器，居中对齐并限制宽度 -->
+    <div class="container">
+        <!-- 导航栏 -->
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <a href="../index.html" class="logo-link">FoodHub</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search foods...">
+                    <button type="submit">🔍</button>
+                </div>
+                <div class="buttons">
+                    <button><i class="fas fa-plus"></i> Add Food</button>
+                    <button><i class="fas fa-user"></i> Login</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 编辑内容区域 -->
+        <div class="content">
+            <h2>Edit Litchi</h2>
+
+            <!-- 编辑表单 -->
+            <form class="edit-form" onsubmit="return false;">
+                <!-- 名称、价格、图片 -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" value="Litchi">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" value="4">
+                </div>
+
+                <div class="form-group">
+                    <label for="picture">Picture:</label>
+                    <input type="text" id="picture" value="litchi.jpg">
+                </div>
+
+                <!-- 属性复选框 -->
+                <div class="attributes">
+                    <div class="attribute">
+                        <input type="checkbox" id="fruits" checked>
+                        <label for="fruits">fruits</label>
+                    </div>
+                    <div class="attribute">
+                        <input type="checkbox" id="vegetable">
+                        <label for="vegetable">vegetable</label>
+                    </div>
+                    <div class="attribute">
+                        <input type="checkbox" id="meat">
+                        <label for="meat">meat</label>
+                    </div>
+                    <div class="attribute">
+                        <input type="checkbox" id="cooked">
+                        <label for="cooked">cooked</label>
+                    </div>
+                    <div class="attribute">
+                        <input type="checkbox" id="fresh" checked>
+                        <label for="fresh">fresh</label>
+                    </div>
+                    <div class="attribute">
+                        <input type="checkbox" id="organic">
+                        <label for="organic">organic</label>
+                    </div>
+                </div>
+
+                <!-- 保存按钮 -->
+                <button type="button" class="save-button" id="saveButton">Save</button>
+            </form>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <div class="footer-container">
+                <a href="../impressum.html" style="text-decoration: none; color: inherit;">
+                    <p>Impressum</p>
+                </a>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById("saveButton").addEventListener("click", function () {
+            // 获取用户输入的值
+            const name = document.getElementById("name").value.trim();
+            let price = document.getElementById("price").value.trim(); // 使用let便于修改
+            const picture = document.getElementById("picture").value.trim();
+            const picturePath = picture.startsWith("images/") ? picture : "images/" + picture;
+
+            // 强制添加单位 €/kg
+            if (!price.endsWith("€/kg")) {
+                price += "€/kg";
+            }
+
+            // 获取复选框的值
+            const selectedAttributes = [];
+            const attributeCheckboxes = document.querySelectorAll(".attributes input[type='checkbox']");
+            attributeCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedAttributes.push(checkbox.id);
+                }
+            });
+
+            // 保存编辑后的数据到 sessionStorage
+            const foodId = "litchi"; // 当前编辑的食物 ID
+            sessionStorage.setItem(`${foodId}_name`, name || "Litchi");
+            sessionStorage.setItem(`${foodId}_price`, price || "4.00€/kg");
+            sessionStorage.setItem(`${foodId}_picture`, picturePath || "images/litchi.jpg");
+            sessionStorage.setItem(`${foodId}_attributes`, JSON.stringify(selectedAttributes.length ? selectedAttributes : ["fruit", "fresh"]));
+
+            // 跳转回主页面
+            window.location.href = "../index.html";
+        });
+    </script>
+</body>
+
+</html>
